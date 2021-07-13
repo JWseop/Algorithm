@@ -1,0 +1,25 @@
+//Baek Joon 1193
+//https://www.acmicpc.net/problem/1193
+
+#include <stdio.h>
+
+int main(void) {
+    int i=1, a=1, N=0, k;
+    scanf("%d", &N);
+    if(N==1){                       //N이 1일 때 1/1 출력
+        printf("%d/%d\n", 1, 1);
+        return 0;
+    }
+    while(N>a){                    //N이 몇번째 대각줄인지 판단하자
+        i++;                        //입력 받은 N이 a보다 커질 때 까지 피보나치 수열을 따라감
+        a+=i;
+    }
+    k=N-(a-i);                      //i번 대각선의 k번째 항 = N의 항
+    if(i%2==0){                     //체크하는 줄이 짝수 일 때
+        printf("%d/%d\n", k, (i+1)-k);
+    }
+    else{
+        printf("%d/%d\n", (i+1)-k, k);
+    }
+    return 0;
+}
