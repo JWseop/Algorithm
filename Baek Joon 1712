@@ -1,0 +1,14 @@
+//BaekJoon 1712
+//https://www.acmicpc.net/problem/1712
+
+#include <stdio.h>
+
+int main(void) {
+    int A, B, C; //고정비용=A만원, 가변비용=B만원, 가격=C만원, 판매개수=N
+    scanf("%d %d %d", &A, &B, &C);
+    if(B>=C){
+        printf("-1\n");
+    }
+    else printf("%d\n", A/(C-B)+1);
+    return 0;
+}
