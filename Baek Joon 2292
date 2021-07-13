@@ -1,0 +1,19 @@
+//Baek Joon 2292
+//https://www.acmicpc.net/problem/2292
+
+#include <stdio.h>
+
+int main(void) {
+    int i=1, a=1, N=0;
+    scanf("%d", &N);
+    if(N==0||N==1){
+        printf("%d\n", N);
+        return 0;
+    }
+    while(N>a){
+        a+=6*i;
+        i++;
+    }
+    printf("%d\n", i);
+    return 0;
+}
