@@ -1,0 +1,28 @@
+//Baek Joon 1193
+//https://www.acmicpc.net/problem/10250
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    int H, W, N, T;
+    int x, y;
+    scanf("%d",&T);
+    int* result = (int*)malloc(sizeof(int)*T);
+    for(int i=0; i<T;i++)
+    {
+        scanf("%d %d %d", &H, &W, &N);
+        if(N%H==0){
+            x=H;
+            y = N/H;
+        }
+        else{
+            x = N%H;
+            y = N/H+1;
+        }
+        result[i] = x*100+y;
+    }
+    for(int i=0; i<T;i++)   printf("%d\n", result[i]);
+    free(result);
+    return 0;
+}
